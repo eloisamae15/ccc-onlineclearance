@@ -1847,6 +1847,7 @@ ul.tab-custon-design li a, ul.tab-custon-design li a:hover, ul.tab-custon-design
 .analysis-progrebar-ctn{
 	padding:20px;
 	background:#fff;
+    padding-bottom: 0%;
 }
 .graph-rp{
 	text-align:right;
@@ -2333,12 +2334,15 @@ ul.two-part-sp li{
 .payment-adress button{
 	background:#ff8d00;
 	border-color:#ff8d00;
+    margin-top: 30px;
 }
 .payment-adress button:hover, .payment-adress button:focus, .payment-adress button:active, .payment-adress button:visited, .credit-card-custom a:hover, .credit-card-custom a:focus, .credit-card-custom a:active, .credit-card-custom a:visited, .waves-light:hover, .waves-light:focus, .waves-light:active, .waves-light:visited{
 	background:#ff8d00;
 	border-color:#ff8d00;
 	outline:none;
 	cursor:pointer;
+    
+
 }
 .product-cart-dn {
     display: none;

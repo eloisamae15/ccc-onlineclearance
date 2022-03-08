@@ -29,54 +29,11 @@
                             </div>
                             <div class="profile-details-hr">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                                        <div class="address-hr">
-                                            <p><b>Name</b><br /> Fly Zend</p>
-                                        </div>
+                                    <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
+                                        <p class="fa fa-id-badge" aria-hidden="true"><b> Student ID</b><br /> 18-01934</p>
                                     </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                                        <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                            <p><b>Department</b><br /> CSE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                                        <div class="address-hr">
-                                            <p><b>Email ID</b><br /> fly@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-                                        <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                            <p><b>Phone</b><br /> +01962067309</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="address-hr">
-                                            <p><b>Address</b><br /> E104, catn-2, Chandlodia Ahmedabad Gujarat, UK.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <div class="address-hr">
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <h3>500</h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <div class="address-hr">
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <h3>900</h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                        <div class="address-hr">
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                                            <h3>600</h3>
-                                        </div>
+                                    <div class="address-hr">
+                                        <p class="fa fa-user" aria-hidden="true"><b> Full Name</b><br />Eloisa Mae De Torres</p>
                                     </div>
                                 </div>
                             </div>
@@ -88,6 +45,9 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 <div class="row">
+                                                    <div class="text-center login-footer">
+                                                        <h2>My Profile</h2>
+                                                    </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <input name="number" type="text" class="form-control" placeholder="First Name">
@@ -172,7 +132,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="payment-adress mg-t-15">
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">Submit</button>
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">View Clearance</button>
                                                         </div>
                                                     </div>
                                                 </div>
