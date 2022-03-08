@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  
+  <div class="studpage">
     <div class="all-content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -198,7 +198,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>

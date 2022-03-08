@@ -40,7 +40,7 @@
 			</div>
 			<div class="text-center login-footer">
 				<p>Copyright © 2022. All rights reserved.</a></p>
-        <p>Hosted by MVSoftech.Inc.</p>
+        <p>Hosted By MVSoftech.Inc.</p>
 			</div>
 		</div>   
     </div>
