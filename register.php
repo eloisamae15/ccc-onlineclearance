@@ -5,11 +5,14 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
 <div class="error-pagewrap">
 		<div class="error-page-int">
 			<div class="text-center custom-login">
-				<h3>Register</h3>
+				<!-- <h3>Register</h3> -->
 			</div>
 			<div class="content-error">
 				<div class="hpanel">
                     <div class="panel-body">
+                    <div class="logoccc">
+                          <img src="img/LOGINLogo.png" style="width: 75%; height: 70%;">
+                    </div>
                         <form action="#" id="loginForm">
                             <div class="row">
                                 <div class="form-group col-lg-12">
@@ -45,7 +48,7 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="register_btn" class="btn btn-success loginbtn">Register</button>
+                                <button type="submit" name="register_btn" class="btn btn-success regbtn">Register</button>
                                 <button class="btn btn-default" onclick="location.href='login.php'">Cancel</button>
                             </div>
                         </form>
@@ -53,7 +56,7 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
                 </div>
 			</div>
 			<div class="text-center login-footer">
-				<p>Copyright © 2018. All rights reserved.</p>
+				<p>Copyright © 2022. All rights reserved.</p>
 			</div>
 		</div>   
     </div>
@@ -102,9 +105,7 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-    <!-- tawk chat JS
-		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+   
 </body>
 
 </html>

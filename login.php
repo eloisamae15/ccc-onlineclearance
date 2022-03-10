@@ -13,17 +13,17 @@
 				<div class="hpanel">
                     <div class="panel-body">
                         <div class="logoccc">
-                          <img src="img/LOGINLogo.png" style="width: 70%; height: 70%; ">
+                          <img src="img/LOGINLogo.png" style="width: 75%; height: 70%;">
                     </div>
                         <?php echo display_error(); ?>
                         <form action="login.php" method="post">
                             <div class="form-group">
-                                <label class="control-label" for="username">Email</label>
+                                <!-- <label class="control-label" for="username">Email</label> -->
                                 <input type="text" placeholder="Enter your email" title="Please enter you email" required="" value="" name="email" id="email" class="form-control">
                                 <span class="help-block small">Your unique username to app</span>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="password">Password</label>
+                                <!-- <label class="control-label" for="password">Password</label> -->
                                 <input type="password" title="Please enter your password" placeholder="Password" required="" value="" name="password" id="password" class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
@@ -33,17 +33,15 @@
                             </div>
                             <button class="btn btn-success btn-block loginbtn" type="submit" name="login_btn">Login</button>
                             <!--<button class="btn btn-successs btn-block" onclick="location.href='register.php'">Register</button>-->
-                           <a href="register.php">Sign up</a>
+                            <div class="reg">
+                                <p style="text-align:center">Don't have an Account?<a href="register.php">Sign up </a></p>
+                            </div>
                         </form>
-                       
                     </div>
-                    
                 </div>
-                
 			</div>
 			<div class="text-center login-footer">
 				<p>Copyright © 2022. All rights reserved.Hosted by MVSoftech.Inc.</a></p>
-      
 			</div>
 		</div>   
     </div>
