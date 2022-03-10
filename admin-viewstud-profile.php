@@ -45,7 +45,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 <div class="row">
-                                                    <div class="left">
+                                                    <div class="text-center login-footer">
                                                         <h2>My Profile</h2>
                                                     </div>
                                                     <div class="col-lg-6">
@@ -62,38 +62,84 @@
                                                             <input type="text" class="form-control" placeholder=" Age">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Gender">
+                                                            <input type="text" class="form-control" placeholder="Gender">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Address">
+                                                            <input type="number" class="form-control" placeholder="Address">
+                                                        </div>
+                                                        <div class="file-upload-inner ts-forms">
+                                                            <div class="input prepend-big-btn">
+                                                                <label class="icon-right" for="prepend-big-btn">
+																		<i class="fa fa-download"></i>
+																	</label>
+                                                                <div class="file-button">
+                                                                    Browse
+                                                                    <input type="file" onchange="document.getElementById('prepend-big-btn').value = this.value;">
+                                                                </div>
+                                                                <input type="text" id="prepend-big-btn" placeholder="no file selected">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    
-                                                     <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input name="number" type="text" class="form-control" placeholder="Course">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group sm-res-mg-15 tbpf-res-mg-15">
+                                                            <input type="text" class="form-control" placeholder="Description">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Year Level">
+                                                            <select class="form-control">
+                                                            <option>Select Course</option>
+																<option>BSIS</option>
+																<option>BSHM</option>
+                                                                <option>BSTM</option>
+																<option>BLIS</option>
+                                                                <option>BSNEd</option>
+																<option>BSEd MATH</option>
+                                                                <option>BSEd SCIENCE</option>
+                                                                <option>ABM</option>
+																<option>STEM</option>
+															</select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Email">
+                                                            <select class="form-control">
+                                                            <option>Select Year Level</option>
+																	<option>First Year</option>
+																	<option>Second Year</option>
+																	<option>Third Year</option>
+																	<option>Fourth Year</option>
+																	<option>Grade 11</option>
+																	<option>Grade 12</option>
+																</select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Contact Number">
+                                                            <select class="form-control">
+																	<option>Select state</option>
+																	<option>Gujarat</option>
+																	<option>Maharastra</option>
+																	<option>Rajastan</option>
+																	<option>Maharastra</option>
+																	<option>Rajastan</option>
+																	<option>Gujarat</option>
+																</select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Account Status">
+                                                            <select class="form-control">
+																	<option>Select city</option>
+																	<option>Surat</option>
+																	<option>Baroda</option>
+																	<option>Navsari</option>
+																	<option>Baroda</option>
+																	<option>Surat</option>
+																</select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Print Status">
+                                                            <input type="text" class="form-control" placeholder="Website URL">
                                                         </div>
+                                                        <input type="number" class="form-control" placeholder="Mobile no.">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="payment-adress mg-t-15">
-                                                        <a ><button href="student-profile-clearance.php" class="btn btn-primary waves-effect waves-light mg-b-15"type="submit"  >View Clearance</button></a>
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">View Clearance</button>
                                                         </div>
                                                     </div>
                                                 </div>

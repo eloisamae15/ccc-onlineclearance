@@ -46,7 +46,7 @@
                                             <div class="review-content-section">
                                                 <div class="row">
                                                     <div class="left">
-                                                        <h2>My Profile</h2>
+                                                        <h2>Clearance Status</h2>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
@@ -93,7 +93,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="payment-adress mg-t-15">
-                                                        <a ><button href="student-profile-clearance.php" class="btn btn-primary waves-effect waves-light mg-b-15"type="submit"  >View Clearance</button></a>
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">View Clearance</button>
                                                         </div>
                                                     </div>
                                                 </div>
