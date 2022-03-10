@@ -14,7 +14,7 @@ $(document).on('click','.update',function(e) {
     var contact_no=$(this).attr("data-contact_no");
     var account_stat=$(this).attr("dataaccount_stat");
     var print_stat=$(this).attr("data-print_stat");
-    var user_typ=$(this).attr("data-user_typ");
+    var user_type=$(this).attr("data-user_type");
     var password=$(this).attr("data-password");
     var clrnc_stat=$(this).attr("data-clrnc_stat");
     var remark_stat=$(this).attr("data-remark_stat");
@@ -48,7 +48,7 @@ $(document).on('click','.update',function(e) {
     $('#contact_no').val(contact_no);
     $('#account_stat').val(account_stat);
     $('#print_stat').val(print_stat);
-    $('#user_typ').val(user_typ);
+    $('#user_type').val(user_type);
     $('#password').val(password);
     
     $('#clrnc_stat').val(clrnc_stat);
@@ -70,7 +70,7 @@ $(document).on('click','.update',function(e) {
     $email            =  $_POST['email'];
     $contact_no        =  $_POST['contact_no'];
     $account_stat        =  $_POST['account_stat'];
-    $user_typ            =  $_POST['user_typ'];
+    $user_type            =  $_POST['user_type'];
     $password            =  $_POST['password'];*/
 
 $(document).on("click", ".delete", function() { 

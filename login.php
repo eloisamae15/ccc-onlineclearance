@@ -4,8 +4,8 @@
     require_once('includes/layout/header.php');
     
  ?>
-<div class="error-pagewrap">
-		<div class="error-page-int ">
+<div class="error-pagewrap1">
+		<div class="error-page-int1 ">
 			<!--<div class="text-center m-b-md custom-login">
 				<h3>WELCOME TO CITY COLLEGE OF CALAPAN</h3>
 			</div>-->
@@ -13,7 +13,7 @@
 				<div class="hpanel">
                     <div class="panel-body">
                         <div class="logoccc">
-                          <img src="img/CCC-logo.png" style="width: 70%; height: 70%; ">
+                          <img src="img/LOGINLogo.png" style="width: 70%; height: 70%; ">
                     </div>
                         <?php echo display_error(); ?>
                         <form action="login.php" method="post">
@@ -24,19 +24,22 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
-                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                <input type="password" title="Please enter your password" placeholder="Password" required="" value="" name="password" id="password" class="form-control">
                             </div>
                             <div class="checkbox login-checkbox">
                                 <label>
-										                <input type="checkbox" class="i-checks"/> Remember me </label>
+										                <input type="checkbox" class="i-checks"/> Show Password</label>
                               <!--  <p class="help-block small">(if this is a private computer)</p>-->
                             </div>
                             <button class="btn btn-success btn-block loginbtn" type="submit" name="login_btn">Login</button>
                             <!--<button class="btn btn-successs btn-block" onclick="location.href='register.php'">Register</button>-->
-                            <p>Don't have an account?</p>
+                           <a href="register.php">Sign up</a>
                         </form>
+                       
                     </div>
+                    
                 </div>
+                
 			</div>
 			<div class="text-center login-footer">
 				<p>Copyright © 2022. All rights reserved.Hosted by MVSoftech.Inc.</a></p>

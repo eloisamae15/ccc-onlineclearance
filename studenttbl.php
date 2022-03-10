@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . 'includes/layout/header.php');
     require_once(ROOT_PATH . 'includes/layout/sidebar.php');
 
-    $sql = "SELECT * from stud_tbl order by no,lname,course,year_lvl";
+    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>
@@ -49,8 +49,7 @@
                                                 <th data-field="contact_no">Contact No</th>
                                                 <th data-field="account_stat">Account Status</th>
                                                 <th data-field="print_stat">Print Status</th>
-                                                <th data-field="user_typ">User Type</th>
-                                                <th data-field="password">Password</th>
+                                                <th data-field="user_type">User Type</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
@@ -75,8 +74,7 @@
                                                 <td><?php echo $row["contact_no"]; ?></td>
                                                 <td><?php echo $row["account_stat"]; ?></td>
                                                 <td><?php echo $row["print_stat"]; ?></td>
-                                                <td><?php echo $row["user_typ"]; ?></td>
-                                                <td><?php echo $row["password"]; ?></td>
+                                                <td><?php echo $row["user_type"]; ?></td>
                                                 <td>
                                                   <div style="display: flex;">
                                                   <a href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -97,8 +95,7 @@
                                                      data-contact_no="<?php echo $row["contact_no"]; ?>"
                                                      data-account_stat="<?php echo $row["account_stat"]; ?>"
                                                      data-print_stat="<?php echo $row["print_stat"]; ?>"
-                                                     data-user_typ="<?php echo $row["user_typ"]; ?>"
-                                                     data-password="<?php echo $row["password"]; ?>"
+                                                     data-user_type="<?php echo $row["user_type"]; ?>"
                                                      ></i>
                                                   </a>
                                                   <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
@@ -216,7 +213,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label >User Type</label>
-                                              <select name="user_typ" style="color: #9b9b9b;" class="form-control">
+                                              <select name="user_type" style="color: #9b9b9b;" class="form-control">
                                                       <option value="none" selected="" disabled="">Select User Type</option>
                                                       <option  value="Student">Student</option>
                                                       <option  value="Signatory" disabled="">Signatory</option>
@@ -339,7 +336,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label >User Type</label>
-                                              <select name="user_typ" style="color: #9b9b9b;" class="form-control">
+                                              <select name="user_type" style="color: #9b9b9b;" class="form-control">
                                                       <option value="none" selected="" disabled="">Select User Type</option>
                                                       <option  value="Student">Student</option>
                                                       <option  value="Signatory" disabled="">Signatory</option>

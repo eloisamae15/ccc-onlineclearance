@@ -237,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `stud_tbl` (
   `contact_no` varchar(45) DEFAULT NULL,
   `account_stat` varchar(45) DEFAULT NULL,
   `print_stat` varchar(45) DEFAULT NULL,
-  `user_typ` varchar(45) DEFAULT NULL,
+  `user_type` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `clrnc_stat` varchar(45) DEFAULT NULL,
   `remark` varchar(45) DEFAULT NULL,
@@ -250,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `stud_tbl` (
 -- Dumping data for table `stud_tbl`
 --
 
-INSERT INTO `stud_tbl` (`no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`, `year_lvl`, `email`, `contact_no`, `account_stat`, `print_stat`, `user_typ`, `password`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`) VALUES
+INSERT INTO `stud_tbl` (`no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`, `year_lvl`, `email`, `contact_no`, `account_stat`, `print_stat`, `user_type`, `password`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`) VALUES
 (1, '18-0001', 'De Torres', 'Eloisa Mae', 'Manalo', '2000-11-15', 21, 'Female', 'Libis, Calapan City', 'BSIS', 'Fourth', 'detorres@gmail.com', '9123456789', 'Active', '1', 'Student', 'password', 'Approved', 'None', 'Complied', '2022-02-14'),
 (2, '18-0002', 'Aboboto', 'Wenzel', 'Lapurga', '2000-09-11', 21, 'Female', 'Baruyan, Calapan City', 'BSIS', 'Fourth', 'abboto@gmail.com', '9123456789', 'Active', '1', 'Student', 'password', 'Not Approved', 'N/A', 'Complied', '2022-02-14'),
 (3, '18-00003', 'Evangelista', 'Shiela Mae', 'Barba', '1998-10-27', 25, 'Female', 'annucing, Calapan City', 'BSTM', 'Second Year', 'shiela@gmail.com', '09123456788', 'Not Active', '0', 'Student', 'password', 'Approved', 'N/A', 'Complied', '2022-03-01'),

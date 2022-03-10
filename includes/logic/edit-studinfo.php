@@ -30,14 +30,14 @@ function edit_books() {
     $email            =  $_POST['email'];
     $contact_no        =  $_POST['contact_no'];
     $account_stat        =  $_POST['account_stat'];
-    $user_typ            =  $_POST['user_typ'];
+    $user_type            =  $_POST['user_type'];
     $password            =  $_POST['password'];
 
 
 
     $query = "UPDATE `stud_tbl` SET `lname`='$lname',`fname`='$fname',`mname`='$mname',
     `bdate`='$bdate',`age`='$age',`gender`='$gender',`address`='$address',`course`='$course',`year_lvl`='$year_lvl',
-    `email`='$email',`contact_no`='$contact_no',`account_stat`='$account_stat',`user_typ`='$user_typ',`password`='$password' WHERE no = '$no'";
+    `email`='$email',`contact_no`='$contact_no',`account_stat`='$account_stat',`user_type`='$user_type',`password`='$password' WHERE no = '$no'";
     $result = mysqli_query($db, $query);
 
         if($result){
