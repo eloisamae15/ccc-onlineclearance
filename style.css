@@ -2343,12 +2343,12 @@ ul.two-part-sp li{
 	text-align:center;
 }
 .payment-adress button{
-	background:#ff8d00;
-	border-color:#ff8d00;
+	background:#6a8fca;
+	border-color:#6a8fca;
 }
 .payment-adress button:hover, .payment-adress button:focus, .payment-adress button:active, .payment-adress button:visited, .credit-card-custom a:hover, .credit-card-custom a:focus, .credit-card-custom a:active, .credit-card-custom a:visited, .waves-light:hover, .waves-light:focus, .waves-light:active, .waves-light:visited{
-	background:#ff8d00;
-	border-color:#ff8d00;
+	background:#6a8fca;
+	border-color:#6a8fca;
 	outline:none;
 	cursor:pointer;
 }

@@ -46,7 +46,7 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
                                 <div class="checkbox col-lg-12">
                                     <input type="checkbox" class="i-checks" checked> Sigh up for our newsletter
                                 </div>
-                            </div>
+                             </div>
                             <div class="text-center">
                                 <button type="submit" name="register_btn" class="btn btn-success regbtn">Register</button>
                                 <button class="btn btn-default" onclick="location.href='login.php'">Cancel</button>

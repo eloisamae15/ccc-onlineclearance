@@ -37,18 +37,70 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="payment-adress mg-t-15">
+                                    <a ><button onclick="location.href='login.php'" class="btn btn-primary waves-effect waves-light mg-b-15"type="submit"  >Logout</button></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="product-payment-inner-st res-mg-t-30 analysis-progrebar-ctn">
+                            <ul id="myTabedu1" class="tab-review-design">
+                            <li><a href="#viewclearance"> Profile</a></li>
+                                <li class="active"><a href="#profile">Clearane Status</a></li>
+                                
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit st-prf-pro">
+                                <div class="product-tab-list tab-pane fade active in" id="profile">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 <div class="row">
-                                                    <div class="left">
-                                                        <h2>My Profile</h2>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Full Name</b><br /> Fly Zend</p>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Mobile</b><br /> 01962067309</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Email</b><br /> fly@gmail.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                                        <div class="address-hr biography">
+                                                            <p><b>Location</b><br /> UK</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="content-profile">
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
+                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-tab-list tab-pane fade" id="viewclearance">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="review-content-section">
+                                            <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <input name="number" type="text" class="form-control" placeholder="Student ID">
                                                         </div>
@@ -93,18 +145,17 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="payment-adress mg-t-15">
-                                                        <a ><button href="student-profile-clearance.php" class="btn btn-primary waves-effect waves-light mg-b-15"type="submit"  >View Clearance</button></a>
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">Print Clearance</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                
-                           
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <div class="footer-copyright-area">
