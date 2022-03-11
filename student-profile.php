@@ -1,12 +1,17 @@
 <?php
     include('config.php');
     require_once(ROOT_PATH . 'includes/layout/header.php');
+
+    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
+    $result = mysqli_query($db, $sql);
+    if (mysqli_num_rows($result) > 0) {
     
     ?>
 <html class="no-js" lang="en">
 
 <head>
-
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/> -->
+ 
 </head>
 
 <body>
@@ -49,105 +54,194 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="product-payment-inner-st res-mg-t-30 analysis-progrebar-ctn">
                             <ul id="myTabedu1" class="tab-review-design">
-                            <li><a href="#viewclearance"> Profile</a></li>
-                                <li class="active"><a href="#profile">Clearane Status</a></li>
-                                
+                            <li ><a href="#profile">Profile</a></li>
+                                <li class="active"> <a  href="#viewclearance">Clearance Status</a></li>
+                               
                             </ul>
                             <div id="myTabContent" class="tab-content custom-product-edit st-prf-pro">
-                                <div class="product-tab-list tab-pane fade active in" id="profile">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="review-content-section">
-                                                <div class="row">
-                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                        <div class="address-hr biography">
-                                                            <p><b>Full Name</b><br /> Fly Zend</p>
-                                                        </div>
+                                <div class="product-tab-list tab-pane fade active in" id="viewclearance">
+                                   
+                                   <div class="table-responsive">
+                                   <div class="data-table-area mg-b-15">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="sparkline13-list">
+                                <div class="sparkline13-hd">
+                                    <div class="main-sparkline13-hd">
+                                        <div class="col-lg-11 col-md-10 col-sm-11 col-xs-12">
+                                            <!-- <h1>Student Table</h1> -->
+                                        </div>
+                                        <!-- <a class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalert"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Add New</a> -->
+                                    </div>
+                                </div>
+                                <div class="sparkline13-graph">
+                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                        <!-- <div id="toolbar">
+                                            <select class="form-control dt-tb">
+                                            <option value="">Export Basic</option>
+                                            <option value="all">Export All</option>
+                                            <option value="selected">Export Selected</option>
+                                            </select>
+                                        </div> -->
+                                        <div class="theader">
+                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                            data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="state" data-checkbox="true"></th>
+                                                    <th data-field="no">No</th>
+                                                    <th data-field="stud_id">Student ID</th>
+                                                    <th data-field="lname">Full Name</th>
+                                                
+                                                    <th data-field="bdate">Birth Day</th>
+                                                    <th data-field="age">Age</th>
+                                                    <th data-field="gender">Gender</th>
+                                                    <th data-field="address">Address</th>
+                                                    <th data-field="course">Course</th>
+                                                    <th data-field="year_lvl">Year Level</th>
+                                                    <th data-field="email">Email</th>
+                                                    <th data-field="contact_no">Contact No</th>
+                                                    <th data-field="account_stat">Account Status</th>
+                                                    <th data-field="print_stat">Print Status</th>
+                                                    <th data-field="user_type">User Type</th>
+                                                    <th data-field="action">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $i=0;
+                                                while($row = mysqli_fetch_array($result)) {
+                                                ?>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><?php echo $row["no"]; ?></td>
+                                                    <td><?php echo $row["stud_id"]; ?></td>
+                                                    <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
+                                                    
+                                                    <td><?php echo $row["bdate"]; ?></td>
+                                                    <td><?php echo $row["age"]; ?></td>
+                                                    <td><?php echo $row["gender"]; ?></td>
+                                                    <td><?php echo $row["address"]; ?></td>
+                                                    <td><?php echo $row["course"]; ?></td>
+                                                    <td><?php echo $row["year_lvl"]; ?></td>
+                                                    <td><?php echo $row["email"]; ?></td>
+                                                    <td><?php echo $row["contact_no"]; ?></td>
+                                                    <td><?php echo $row["account_stat"]; ?></td>
+                                                    <td><?php echo $row["print_stat"]; ?></td>
+                                                    <td><?php echo $row["user_type"]; ?></td>
+                                                    <td>
+                                                    <div style="display: flex;">
+                                                    <a href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
+                                                    <i class="fa fa-pencil-square-o update" 
+                                                        data-no="<?php echo $row["no"]; ?>"
+                                                        data-stud_id="<?php echo $row['stud_id']; ?>"
+                                                        data-lname="<?php echo $row["lname"]; ?>"
+                                                        data-fname="<?php echo $row["fname"]; ?>"
+                                                        data-mname="<?php echo $row["mname"]; ?>"
+                                                        data-bdate="<?php echo $row["bdate"]; ?>"
+                                                        data-age="<?php echo $row["age"]; ?>"
+                                                        data-gender="<?php echo $row["gender"]; ?>"
+                                                        data-address="<?php echo $row["address"]; ?>"
+                                                        data-course="<?php echo $row["course"]; ?>"
+                                                        data-year_lvl="<?php echo $row["year_lvl"]; ?>"
+                                                        data-email="<?php echo $row["email"]; ?>"
+                                                        data-contact_no="<?php echo $row["contact_no"]; ?>"
+                                                        data-account_stat="<?php echo $row["account_stat"]; ?>"
+                                                        data-print_stat="<?php echo $row["print_stat"]; ?>"
+                                                        data-user_type="<?php echo $row["user_type"]; ?>"
+                                                        ></i>
+                                                    </a>
+                                                    <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
+                                                    <i class="fa fa-trash-o" aria-hidden="true" data-toggle="tooltip" title="Delete"></i></a>
                                                     </div>
-                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                        <div class="address-hr biography">
-                                                            <p><b>Mobile</b><br /> 01962067309</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                        <div class="address-hr biography">
-                                                            <p><b>Email</b><br /> fly@gmail.com</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                        <div class="address-hr biography">
-                                                            <p><b>Location</b><br /> UK</p>
-                                                        </div>
-                                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                                    $i++;
+                                                        }
+                                                    }else{
+                                                        echo "No result found";
+                                                    }
+                                                ?>
+                                            </tbody>
+                                        </table>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="content-profile">
-                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
-                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
-                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
-                                                                dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                                        </div>
-                                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Static Table End -->
+            
+        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="payment-adress mg-t-15">
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">Print Clearance</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    
                                     </div>
-                                </div>
-                                <div class="product-tab-list tab-pane fade" id="viewclearance">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="review-content-section">
-                                            <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input name="number" type="text" class="form-control" placeholder="Student ID">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Fullname">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Date of Birth">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Age">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Gender">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Address">
+                                    <div class="product-tab-list tab-pane fade" id="profile">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="review-content-section">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label >Student ID</label>
+                                                        <input name="number" type="text" class="form-control" placeholder="Student ID">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Full Name</label>
+                                                        <input type="text" class="form-control" placeholder="Fullname">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Date of Birth</label>
+                                                        <input type="text" class="form-control" placeholder="Date of Birth">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Age</label>
+                                                        <input type="text" class="form-control" placeholder=" Age">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Gender</label>
+                                                        <input type="text" class="form-control" placeholder=" Gender">
+                                                    </div>
+                                                
+                                                </div>
+                                                
+                                                    <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label >Address</label>
+                                                        <input type="text" class="form-control" placeholder=" Address">
+                                                    </div>
+                                                    <div class="form-group">            
+                                                        <label >Course</label>
+                                                        <input name="number" type="text" class="form-control" placeholder="Course">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Year Level</label>
+                                                        <input type="text" class="form-control" placeholder="Year Level">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Email</label>
+                                                        <input type="text" class="form-control" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label >Contact Number</label>
+                                                        <input type="text" class="form-control" placeholder="Contact Number">
+                                                    </div>
                                                         </div>
                                                     </div>
                                                     
-                                                     <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input name="number" type="text" class="form-control" placeholder="Course">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Year Level">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Email">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Contact Number">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Account Status">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder=" Print Status">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="payment-adress mg-t-15">
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light mg-b-15">Print Clearance</button>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +249,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
             </div>
         </div>
         <div class="footer-copyright-area">
@@ -177,6 +270,7 @@
     <!-- bootstrap JS
 		============================================ -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
     <!-- wow JS
 		============================================ -->
     <script src="js/wow.min.js"></script>
@@ -221,7 +315,12 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-   
+    <!-- <script>
+        $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
+    -->
 </body>
 
 </html>

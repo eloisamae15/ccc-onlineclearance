@@ -39,6 +39,10 @@
 
 
 ----------------------Wennnzzzz------------sidebar stylessss-----------------------------------------------*/
+div.table-responsive
+{
+    overflow-x: auto;
+}
 .logoccc{
     margin-left: 29%;
     margin-right: 11%;
@@ -1328,7 +1332,7 @@ ul.tab-custon-design li, ul.tab-review-design li {
     left: 0px;
     width: 0%;
     height: 2px;
-    background: #ff8d00;
+    background: #006DF0;
     content: "";
 	transition:all .4s ease 0s;
 }
@@ -1338,12 +1342,12 @@ ul.tab-custon-design li, ul.tab-review-design li {
     left: 0px;
     width: 80%;
     height: 2px;
-    background: #ff8d00;
+    background: #006DF0;
     content: "";
 	transition:all .4s ease 0s;
 }
 ul.tab-custon-design li.active a, ul.tab-review-design li.active a {
-    color: #ff8d00 !important;
+    color: #006DF0 !important;
 }
 ul.tab-custon-design li a, ul.tab-custon-design li a:hover, ul.tab-custon-design li a:focus, ul.tab-review-design li a, ul.tab-review-design li a:hover, ul.tab-review-design li a:focus {
     font-size: 18px;
@@ -2347,8 +2351,8 @@ ul.two-part-sp li{
 	border-color:#6a8fca;
 }
 .payment-adress button:hover, .payment-adress button:focus, .payment-adress button:active, .payment-adress button:visited, .credit-card-custom a:hover, .credit-card-custom a:focus, .credit-card-custom a:active, .credit-card-custom a:visited, .waves-light:hover, .waves-light:focus, .waves-light:active, .waves-light:visited{
-	background:#6a8fca;
-	border-color:#6a8fca;
+	background:red;
+	border-color:red;
 	outline:none;
 	cursor:pointer;
 }
