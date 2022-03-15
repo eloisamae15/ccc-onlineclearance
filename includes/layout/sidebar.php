@@ -83,7 +83,7 @@
                                 <span class="mini-click-non">Manage Signatory</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="#">
+                                <li><a title="Inbox" href="signatorytbl.php">
                                     <span class="fa fa-user-secret" aria-hidden="true"></span>
                                     <span class="mini-sub-pro">College Signatory</span></a>
                                 </li>
@@ -211,8 +211,8 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="img/profile/<?php echo $_SESSION['user']['profile_pic']; ?>" alt="" />
-															<span class="admin-name">ELOISA MAE DE TORRES<!--?php echo $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name']; ?--></span>
+															<img src="img/profile/<?php echo $_SESSION['user']['profile_img']; ?>" alt="" />
+															<span class="admin-name"><?php echo $_SESSION['user']['fname'] . ' ' . $_SESSION['user']['lname']; ?></span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">

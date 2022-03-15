@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     background: #F6F8FA;
     padding-top: 30px;
-    padding-right: 15%;
+    /* padding-right: 15%; */
     
 }
 
@@ -161,8 +161,17 @@ padding: 0
 /*----------------------------------------*/
 /*  4. left sidebar
 /*----------------------------------------*/
+
 .all-content-wrapper {
     margin-left: 200px;
+    transition: all 0.3s;
+}
+.stud-pf-cont {
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+.all-signatory {
+    margin-left: 10px;
     transition: all 0.3s;
 }
 .left-sidebar-pro {

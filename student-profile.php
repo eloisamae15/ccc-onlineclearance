@@ -2,7 +2,7 @@
     include('config.php');
     require_once(ROOT_PATH . 'includes/layout/header.php');
 
-    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
+    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`,`gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
     
@@ -16,7 +16,7 @@
 
 <body>
   <div class="studpage">
-    <div class="all-content-wrapper">
+    <div class="all-content-wrapper stud-pf-cont">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -35,10 +35,10 @@
                             <div class="profile-details-hr">
                                 <div class="row">
                                     <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                        <p class="fa fa-id-badge" aria-hidden="true"><b> Student ID</b><br /> 18-01934</p>
+                                        <p class="fa fa-id-badge" aria-hidden="true"><b> Student ID</b><br /><?php echo $_SESSION['user']['stud_id']; ?></p>
                                     </div>
                                     <div class="address-hr">
-                                        <p class="fa fa-user" aria-hidden="true"><b> Full Name</b><br />Eloisa Mae De Torres</p>
+                                        <p class="fa fa-user" aria-hidden="true"><b> Full Name</b><br /><?php echo $_SESSION['user']['fname'] . ' ' . $_SESSION['user']['lname']; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                             </select>
                                         </div> -->
                                         <div class="theader">
-                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" d ata-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
                                             data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                             <thead>
                                                 <tr>
@@ -95,7 +95,6 @@
                                                     <th data-field="lname">Full Name</th>
                                                 
                                                     <th data-field="bdate">Birth Day</th>
-                                                    <th data-field="age">Age</th>
                                                     <th data-field="gender">Gender</th>
                                                     <th data-field="address">Address</th>
                                                     <th data-field="course">Course</th>
@@ -105,7 +104,6 @@
                                                     <th data-field="account_stat">Account Status</th>
                                                     <th data-field="print_stat">Print Status</th>
                                                     <th data-field="user_type">User Type</th>
-                                                    <th data-field="action">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -120,7 +118,6 @@
                                                     <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
                                                     
                                                     <td><?php echo $row["bdate"]; ?></td>
-                                                    <td><?php echo $row["age"]; ?></td>
                                                     <td><?php echo $row["gender"]; ?></td>
                                                     <td><?php echo $row["address"]; ?></td>
                                                     <td><?php echo $row["course"]; ?></td>
@@ -130,33 +127,7 @@
                                                     <td><?php echo $row["account_stat"]; ?></td>
                                                     <td><?php echo $row["print_stat"]; ?></td>
                                                     <td><?php echo $row["user_type"]; ?></td>
-                                                    <td>
-                                                    <div style="display: flex;">
-                                                    <a href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
-                                                    <i class="fa fa-pencil-square-o update" 
-                                                        data-no="<?php echo $row["no"]; ?>"
-                                                        data-stud_id="<?php echo $row['stud_id']; ?>"
-                                                        data-lname="<?php echo $row["lname"]; ?>"
-                                                        data-fname="<?php echo $row["fname"]; ?>"
-                                                        data-mname="<?php echo $row["mname"]; ?>"
-                                                        data-bdate="<?php echo $row["bdate"]; ?>"
-                                                        data-age="<?php echo $row["age"]; ?>"
-                                                        data-gender="<?php echo $row["gender"]; ?>"
-                                                        data-address="<?php echo $row["address"]; ?>"
-                                                        data-course="<?php echo $row["course"]; ?>"
-                                                        data-year_lvl="<?php echo $row["year_lvl"]; ?>"
-                                                        data-email="<?php echo $row["email"]; ?>"
-                                                        data-contact_no="<?php echo $row["contact_no"]; ?>"
-                                                        data-account_stat="<?php echo $row["account_stat"]; ?>"
-                                                        data-print_stat="<?php echo $row["print_stat"]; ?>"
-                                                        data-user_type="<?php echo $row["user_type"]; ?>"
-                                                        ></i>
-                                                    </a>
-                                                    <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
-                                                    <i class="fa fa-trash-o" aria-hidden="true" data-toggle="tooltip" title="Delete"></i></a>
-                                                    </div>
-                                                    </td>
+                                                    
                                                 </tr>
                                                 <?php
                                                     $i++;

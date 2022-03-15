@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . 'includes/layout/header.php');
     require_once(ROOT_PATH . 'includes/layout/sidebar.php');
 
-    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`, `age`, `gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `apprvd_date`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
+    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`,`gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`,`user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>
@@ -65,7 +65,6 @@
                                                 <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
                                                 
                                                 <td><?php echo $row["bdate"]; ?></td>
-                                                <td><?php echo $row["age"]; ?></td>
                                                 <td><?php echo $row["gender"]; ?></td>
                                                 <td><?php echo $row["address"]; ?></td>
                                                 <td><?php echo $row["course"]; ?></td>
@@ -86,7 +85,6 @@
                                                      data-fname="<?php echo $row["fname"]; ?>"
                                                      data-mname="<?php echo $row["mname"]; ?>"
                                                      data-bdate="<?php echo $row["bdate"]; ?>"
-                                                     data-age="<?php echo $row["age"]; ?>"
                                                      data-gender="<?php echo $row["gender"]; ?>"
                                                      data-address="<?php echo $row["address"]; ?>"
                                                      data-course="<?php echo $row["course"]; ?>"

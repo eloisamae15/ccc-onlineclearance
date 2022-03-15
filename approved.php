@@ -43,7 +43,6 @@
                                                 <th data-field="clrnc_stat">Clearance Stat</th>
                                                 <th data-field="remark_stat">Remark_stat</th>
                                                 <th data-field="remark">Remark</th>
-                                                <th data-field="apprvd_date">Approved Date</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
@@ -64,7 +63,7 @@
                                                 <td><?php echo $row["clrnc_stat"]; ?></td>
                                                 <td><?php echo $row["remark_stat"]; ?></td>
                                                 <td><?php echo $row["remark"]; ?></td>
-                                                <td><?php echo $row["apprvd_date"]; ?></td>
+                                                
                                                 <td>
                                                   <div style="display: flex;">
                                                   <a href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -80,7 +79,7 @@
                                                      data-clrnc_stat="<?php echo $row["clrnc_stat"]; ?>"
                                                      data-remark_stat="<?php echo $row["remark_stat"]; ?>"
                                                      data-remark="<?php echo $row["remark"]; ?>"
-                                                     data-apprvd_date="<?php echo $row["apprvd_date"]; ?>"
+                                                    
                                                      ></i>
                                                   </a>
                                                   <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
