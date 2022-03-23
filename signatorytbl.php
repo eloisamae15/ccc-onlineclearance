@@ -54,15 +54,9 @@
                             </div>
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
-                                    </div>
+                                <div class="product-buttons">
+                                <button type="button" class="button-default cart-btn">Edit</button>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -85,13 +79,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -115,13 +103,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -145,13 +127,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -177,13 +153,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -207,13 +177,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -237,13 +201,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -267,13 +225,7 @@
                             <div class="panel-footer contact-footer">
                                 <div class="professor-stds-int">
                                     <div class="professor-stds">
-                                        <div class="contact-stat"><span>Likes: </span> <strong>956</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Comments: </span> <strong>350</strong></div>
-                                    </div>
-                                    <div class="professor-stds">
-                                        <div class="contact-stat"><span>Views: </span> <strong>450</strong></div>
+                                        <div class="contact-stat"><span>Edit </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -342,9 +294,7 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-    <!-- tawk chat JS
-		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+     
 </body>
 
 </html>

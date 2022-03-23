@@ -2,7 +2,7 @@
     include('config.php');
     require_once(ROOT_PATH . 'includes/layout/header.php');
 
-    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`,`gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`, `user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
+    $sql = "SELECT department_tbl.name as 'Department', concat(users.fname, ' ', users.lname) as 'Signatory', remark, remark_status, sig_image, approved_date FROM department_tbl, users, clearance_tbl WHERE department_tbl.id= clearance_tbl.dept_id and users.user_id= clearance_tbl.signatory_id";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
     
@@ -35,7 +35,7 @@
                             <div class="profile-details-hr">
                                 <div class="row">
                                     <div class="address-hr tb-sm-res-d-n dps-tb-ntn">
-                                        <p class="fa fa-id-badge" aria-hidden="true"><b> Student ID</b><br /><?php echo $_SESSION['user']['stud_id']; ?></p>
+                                        <p class="fa fa-id-badge" aria-hidden="true"><b> Student ID</b><br /><? echo $_SESSION['user']['user_id']; ?></p>
                                     </div>
                                     <div class="address-hr">
                                         <p class="fa fa-user" aria-hidden="true"><b> Full Name</b><br /><?php echo $_SESSION['user']['fname'] . ' ' . $_SESSION['user']['lname']; ?></p>
@@ -87,46 +87,28 @@
                                         <div class="theader">
                                         <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" d ata-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
                                             data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-                                            <thead>
+                                            
                                                 <tr>
-                                                    <th data-field="state" data-checkbox="true"></th>
-                                                    <th data-field="no">No</th>
-                                                    <th data-field="stud_id">Student ID</th>
-                                                    <th data-field="lname">Full Name</th>
-                                                
-                                                    <th data-field="bdate">Birth Day</th>
-                                                    <th data-field="gender">Gender</th>
-                                                    <th data-field="address">Address</th>
-                                                    <th data-field="course">Course</th>
-                                                    <th data-field="year_lvl">Year Level</th>
-                                                    <th data-field="email">Email</th>
-                                                    <th data-field="contact_no">Contact No</th>
-                                                    <th data-field="account_stat">Account Status</th>
-                                                    <th data-field="print_stat">Print Status</th>
-                                                    <th data-field="user_type">User Type</th>
+                                                    <th data-field="Department">Department</th>
+                                                    <th data-field="Signatory">Signatory</th>
+                                                    <th data-field="remark">Remark</th>
+                                                    <th data-field="remark_status">Remark Status</th>
+                                                    <th data-field="approve_date">Approved Date</th>
+                                                    <th data-field="sig_image">Signature</th>
                                                 </tr>
-                                            </thead>
+                                           
                                             <tbody>
                                                 <?php
                                                 $i=0;
                                                 while($row = mysqli_fetch_array($result)) {
                                                 ?>
                                                 <tr>
-                                                    <td></td>
-                                                    <td><?php echo $row["no"]; ?></td>
-                                                    <td><?php echo $row["stud_id"]; ?></td>
-                                                    <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
-                                                    
-                                                    <td><?php echo $row["bdate"]; ?></td>
-                                                    <td><?php echo $row["gender"]; ?></td>
-                                                    <td><?php echo $row["address"]; ?></td>
-                                                    <td><?php echo $row["course"]; ?></td>
-                                                    <td><?php echo $row["year_lvl"]; ?></td>
-                                                    <td><?php echo $row["email"]; ?></td>
-                                                    <td><?php echo $row["contact_no"]; ?></td>
-                                                    <td><?php echo $row["account_stat"]; ?></td>
-                                                    <td><?php echo $row["print_stat"]; ?></td>
-                                                    <td><?php echo $row["user_type"]; ?></td>
+                                                    <td><?php echo $row["Department"]; ?></td>
+                                                    <td><?php echo $row["Signatory"]; ?></td>
+                                                    <td><?php echo $row["remark"];?></td>
+                                                    <td><?php echo $row["remark_status"]; ?></td>
+                                                    <td><?php echo $row["approved_date"]; ?></td>
+                                                    <td><?php echo $row["sig_image"]; ?></td>
                                                     
                                                 </tr>
                                                 <?php
@@ -143,9 +125,6 @@
                             </div>
                         </div>
                     </div>
-                        
-                    
-                        
                     </div>
                 </div>
             </div>

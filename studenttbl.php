@@ -1,9 +1,10 @@
 <?php
-    include('config.php');
+    include('import-csv.php');
     require_once(ROOT_PATH . 'includes/layout/header.php');
     require_once(ROOT_PATH . 'includes/layout/sidebar.php');
+    
 
-    $sql = "SELECT `no`, `stud_id`, `lname`, `fname`, `mname`, `bdate`,`gender`, `address`, `course`,`email`, `year_lvl`, `contact_no`, `account_stat`, `print_stat`, `clrnc_stat`, `remark`, `remark_stat`,`user_type` FROM `stud_tbl`,`users` WHERE stud_tbl.no = users.id ";
+    $sql = "SELECT stud_tbl.user_id, users.lname, users.fname, users.mname, bdate, gender, contact_no, course, year_lvl from users, stud_tbl where stud_tbl.user_id = users.user_id";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>
@@ -35,21 +36,13 @@
                                         <thead>
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="no">No</th>
-                                                <th data-field="stud_id">Student ID</th>
+                                                <th data-field="user_id">Student ID</th>
                                                 <th data-field="lname">Full Name</th>
-                                               
                                                 <th data-field="bdate">Birth Day</th>
-                                                <th data-field="age">Age</th>
                                                 <th data-field="gender">Gender</th>
-                                                <th data-field="address">Address</th>
                                                 <th data-field="course">Course</th>
                                                 <th data-field="year_lvl">Year Level</th>
-                                                <th data-field="email">Email</th>
                                                 <th data-field="contact_no">Contact No</th>
-                                                <th data-field="account_stat">Account Status</th>
-                                                <th data-field="print_stat">Print Status</th>
-                                                <th data-field="user_type">User Type</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
@@ -60,43 +53,29 @@
                                             ?>
                                             <tr>
                                                 <td></td>
-                                                <td><?php echo $row["no"]; ?></td>
-                                                <td><?php echo $row["stud_id"]; ?></td>
+                                                <td><?php echo $row["user_id"]; ?></td>
                                                 <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
                                                 
                                                 <td><?php echo $row["bdate"]; ?></td>
                                                 <td><?php echo $row["gender"]; ?></td>
-                                                <td><?php echo $row["address"]; ?></td>
                                                 <td><?php echo $row["course"]; ?></td>
                                                 <td><?php echo $row["year_lvl"]; ?></td>
-                                                <td><?php echo $row["email"]; ?></td>
                                                 <td><?php echo $row["contact_no"]; ?></td>
-                                                <td><?php echo $row["account_stat"]; ?></td>
-                                                <td><?php echo $row["print_stat"]; ?></td>
-                                                <td><?php echo $row["user_type"]; ?></td>
                                                 <td>
                                                   <div style="display: flex;">
                                                   <a href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                   <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
                                                   <i class="fa fa-pencil-square-o update" 
-                                                     data-no="<?php echo $row["no"]; ?>"
-                                                     data-stud_id="<?php echo $row['stud_id']; ?>"
-                                                     data-lname="<?php echo $row["lname"]; ?>"
-                                                     data-fname="<?php echo $row["fname"]; ?>"
-                                                     data-mname="<?php echo $row["mname"]; ?>"
+                                                     data-stud_id="<?php echo $row['user_id']; ?>"
+                                                     data-lname="<?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?>"
                                                      data-bdate="<?php echo $row["bdate"]; ?>"
                                                      data-gender="<?php echo $row["gender"]; ?>"
-                                                     data-address="<?php echo $row["address"]; ?>"
                                                      data-course="<?php echo $row["course"]; ?>"
                                                      data-year_lvl="<?php echo $row["year_lvl"]; ?>"
-                                                     data-email="<?php echo $row["email"]; ?>"
                                                      data-contact_no="<?php echo $row["contact_no"]; ?>"
-                                                     data-account_stat="<?php echo $row["account_stat"]; ?>"
-                                                     data-print_stat="<?php echo $row["print_stat"]; ?>"
-                                                     data-user_type="<?php echo $row["user_type"]; ?>"
                                                      ></i>
                                                   </a>
-                                                  <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
+                                                  <a href="#" class="delete" data-id="<?php echo $row['user_id']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
                                                   <i class="fa fa-trash-o" aria-hidden="true" data-toggle="tooltip" title="Delete"></i></a>
                                                   </div>
                                                 </td>
@@ -128,116 +107,25 @@
                                             <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
                                         </div>
                                     </div>
-                                    <form id="update_form" method="post" name="userform" enctype="multipart/form-data" action="includes/logic/add-student.php">
-                                      <div class="modal-body">
-                                        <div class="col-lg-12 cold-md-12 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <label >Student ID Number</label>
-                                            <input name="stud_id" type="stud_id" class="form-control" placeholder="Student ID" required>
+                                    <form class="form-horizontal well" action="import-csv.php" method="post" name="upload_excel" enctype="multipart/form-data">
+                                        <fieldset>
+                                          <legend>Import CSV/Excel file</legend>
+                                          <div class="control-group">
+                                            <div class="control-label">
+                                              <label>CSV/Excel File:</label>
+                                            </div>
+                                            <div class="controls">
+                                              <input type="file" name="file" id="file" class="input-large">
+                                            </div>
                                           </div>
-                                        </div>
-                                        <div class="col-lg-6 cold-md-6 col-sm6 col-xs-12">
-                                            <div class="form-group">
-                                              <label >Last Name</label>
-                                              <input name="lname" type="lname" class="form-control" placeholder="Last Name" required>
+                                          
+                                          <div class="control-group">
+                                            <div class="controls">
+                                            <button type="submit" id="submit" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload</button>
                                             </div>
-                                            <div class="form-group">
-                                              <label >First Name</label>
-                                              <input name="fname" type="fname" class="form-control" placeholder="First Name" required>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Middle Name</label>
-                                              <input name="mname" type="mname" class="form-control" placeholder="Middle" required>
-                                            </div>
-                                            <div class="form-group" id="data_3">
-                                                <label>Birthdate</label>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                    <input type="bdate" name="bdate" class="form-control" value="" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Age</label>
-                                              <input name="age" type="age" class="form-control" placeholder="00" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Gender</label>   
-                                                    <select name="gender" style="color: #9b9b9b;" class="form-control">
-                                                        <option value="none" selected="" disabled="">Select Gender</option>
-                                                        <option  value="Male">Male</option>
-                                                        <option  value="Female">Female</option>
-                                                    </select>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Address</label>
-                                              <input name="address" type="address" class="form-control" placeholder="Address" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 cold-md-6 col-sm12 col-xs-12">
-                                            <div class="form-group">
-                                                <label>Strand/Course</label>   
-                                                    <select name="course" style="color: #9b9b9b;" class="form-control">
-                                                        <option value="none" selected="" disabled="">Select Course/Strand</option>
-                                                        <option  value="STEM">STEM</option>
-                                                        <option  value="ABM">ABM</option>
-                                                        <option  value="BSIS">BSIS</option>
-                                                        <option  value="BLIS">BLIS</option>
-                                                        <option  value="BSEd MATH">BSEd MATH</option>
-                                                        <option  value="BSEd Science">BSEd Science</option>
-                                                        <option  value="BSNEd">BSNEd</option>
-                                                        <option  value="BSTM">BSTM</option>
-                                                        <option  value="BSHM">BSHM</option>
-                                                    </select>
-                                            </div>
-                                            <div class="form-group">
-                                              <label>Year Level</label>   
-                                                  <select name="year_lvl" style="color: #9b9b9b;" class="form-control">
-                                                      <option value="none" selected="" disabled="">Select Year Level</option>
-                                                      <option  value="Grade 11">Grade 11</option>
-                                                      <option  value="Grade 12">Grade 12</option>
-                                                      <option  value="1st Year">1st Year</option>
-                                                      <option  value="2nd Year">2nd Year</option>
-                                                      <option  value="3rd Year">3rd Year</option>
-                                                      <option  value="4th Year">4th Year</option>
-                                                  </select>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Email</label>
-                                              <input name="email" type="email" class="form-control" placeholder="Email" required>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Contact No.</label>
-                                              <input name="contact_no" type="contact_no" class="form-control" placeholder="Contact No." required>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >User Type</label>
-                                              <select name="user_type" style="color: #9b9b9b;" class="form-control">
-                                                      <option value="none" selected="" disabled="">Select User Type</option>
-                                                      <option  value="Student">Student</option>
-                                                      <option  value="Signatory" disabled="">Signatory</option>
-                                                      <option  value="Appointed Staff" disabled="">Appointed Staff</option>
-                                                  </select>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Accout Status</label>
-                                              <select name="account_stat" style="color: #9b9b9b;" class="form-control">
-                                                  <option value="none" selected="" disabled="">Select Account Status</option>
-                                                  <option  value="Active">Active</option>
-                                                  <option  value="In Active">In Active</option>
-                                                  
-                                              </select>
-                                            </div>
-                                            <div class="form-group">
-                                              <label >Password</label>
-                                              <input name="password" type="password" class="form-control" placeholder="Password">
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="modal-footer">
-                                          <button class="Primary btn btn-custon-rounded-two btn-danger" data-dismiss="modal" href="#">Cancel</button>
-                                          <button class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" type="submit" href="#" name="add_student_btn">Save</a>
-                                      </div>
-                                    </form>
+                                          </div>
+                                        </fieldset>
+                                      </form>
                                 </div>
                             </div>
                       </div>

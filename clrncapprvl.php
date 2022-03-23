@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . 'includes/layout/header.php');
     require_once(ROOT_PATH . 'includes/layout/sidebar.php');
 
-    $sql = "SELECT * from stud_tbl where clrnc_stat = '' order by lname,course,year_lvl";
+    $sql = "SELECT users.user_id, lname, fname, mname, course, year_lvl, remark, remark_status from users, stud_tbl, clearance_tbl where users.user_id = stud_tbl.user_id and users.user_id = clearance_tbl.stud_id";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>
@@ -36,14 +36,12 @@
                                         <thead>
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="no">No</th>
-                                                <th data-field="stud_id">Student ID</th>
+                                                <th data-field="user_id">Student ID</th>
                                                 <th data-field="name">Full Name</th>
                                                 
                                                 <th data-field="course">Course</th>
                                                 <th data-field="year_lvl">Year Level</th>
-                                                <th data-field="clrnc_stat">Clearance Stat</th>
-                                                <th data-field="remark_stat">Remark_stat</th>
+                                                <th data-field="remark_status">Remark Status</th>
                                                 <th data-field="remark">Remark</th>
                                                 <th data-field="action">Action</th>
                                             </tr>
@@ -55,33 +53,29 @@
                                             ?>
                                             <tr>
                                                 <td></td>
-                                                <td><?php echo $row["no"]; ?></td>
-                                                <td><?php echo $row["stud_id"]; ?></td>
+                                                <td><?php echo $row["user_id"]; ?></td>
                                                 <td><?php echo $row["lname"]; echo ", "; echo $row["fname"]; echo " "; echo $row["mname"];?></td>
                                                 
                                                 <td><?php echo $row["course"]; ?></td>
                                                 <td><?php echo $row["year_lvl"]; ?></td>
-                                                <td><?php echo $row["clrnc_stat"]; ?></td>
-                                                <td><?php echo $row["remark_stat"]; ?></td>
+                                                <td><?php echo $row["remark_status"]; ?></td>
                                                 <td><?php echo $row["remark"]; ?></td>
                                                 <td>
                                                   <div style="display: flex;">
                                                   <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
                                                   <i class="fa fa-pencil-square-o update" 
-                                                     data-no="<?php echo $row["no"]; ?>"
-                                                     data-stud_id="<?php echo $row['stud_id']; ?>"
+                                                     data-stud_id="<?php echo $row['user_id']; ?>"
                                                      data-lname="<?php echo $row["lname"]; ?>"
                                                      data-fname="<?php echo $row["fname"]; ?>"
                                                      data-mname="<?php echo $row["mname"]; ?>"
                                                      data-course="<?php echo $row["course"]; ?>"
                                                      data-year_lvl="<?php echo $row["year_lvl"]; ?>"
-                                                     data-clrnc_stat="<?php echo $row["clrnc_stat"]; ?>"
-                                                     data-remark_stat="<?php echo $row["remark_stat"]; ?>"
+                                                     data-remark_stat="<?php echo $row["remark_status"]; ?>"
                                                      data-remark="<?php echo $row["remark"]; ?>"
                                                      ></i>
                                                   </a>
                                                   <a href="" style="background: #1aff00"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
-                                                  <a href="#" class="delete" data-id="<?php echo $row['no']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
+                                                  <a href="#" class="delete" data-id="<?php echo $row['user_id']; ?>" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
                                                   <i  class="fa fa-thumbs-down" aria-hidden="true" data-toggle="tooltip" title="Approved"></i></a>
                                                   </div>
                                                 </td>

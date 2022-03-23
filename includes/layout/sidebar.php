@@ -41,6 +41,10 @@
                                     <span class="fa fa-minus-circle icon-wrap" aria-hidden="true"></span>
                                     <span class="mini-sub-pro">Not Approved</span></a>
                                 </li>
+                                <li><a title="Add Students" href="signatory-clearance.php">
+                                    <span class="fa fa-minus-circle icon-wrap" aria-hidden="true"></span>
+                                    <span class="mini-sub-pro">New</span></a>
+                                </li>
                             </ul>
                         </li>
                         <!-- Library Assets Section -->
@@ -58,10 +62,10 @@
                                     <span class="fa fa-user-circle-o" aria-hidden="true"></span>
                                     <span class="mini-sub-pro">Senior High School</span></a>
                                 </li>
-                                <li><a title="All Library" href="student-profile.php">
+                                <!-- <li><a title="All Library" href="student-profile.php">
                                     <span class="fa fa-user-circle-o" aria-hidden="true"></span>
                                     <span class="mini-sub-pro">SF</span></a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
                         <li>
@@ -92,17 +96,16 @@
                                     <span class="mini-sub-pro">SHS Signatory</span>
                                 </a>
                                 </li>
+                                
+                                <li><a title="View Mail" href="#">
+                                    <span class="fa fa-user-plus" aria-hidden="true"></span>
+                                    <span class="mini-sub-pro">Add Signatory</span>
+                                </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="active">
-                            <a title="Landing Page" href="calendar.php" aria-expanded="false">
-                                <span class="fa fa-calendar icon-wrap" aria-hidden="true"></span>
-                                <span class="mini-click-non">Calendar</span>
-                            </a>
-                        </li>
-                        
-                        <li class="active">
-                            <a title="Landing Page" href="login -sample.php" aria-expanded="false">
+                            <a title="Landing Page" href="login.php" aria-expanded="false">
                                 <span class="fa fa-sign-out icon-wrap" aria-hidden="true"></span>
                                 <span class="mini-click-non">Logout</span>
                             </a>
@@ -211,7 +214,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="img/profile/<?php echo $_SESSION['user']['profile_img']; ?>" alt="" />
+															<img src="img/profile/<?php echo $_SESSION['user']['img']; ?>" alt="" />
 															<span class="admin-name"><?php echo $_SESSION['user']['fname'] . ' ' . $_SESSION['user']['lname']; ?></span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
@@ -244,10 +247,9 @@
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#Charts" href="dashboard.php">Dashboard <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
                                                 <li><a href="dashboard.php">Dashboard v.1</a></li>
-                                                <li><a href="#">Dashboard v.2</a></li>
                                                 
                                             </ul>
                                         </li>
@@ -272,23 +274,23 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#demodepart" href="#">Clearance Report <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul id="demodepart" class="collapse dropdown-header-top">
-                                                <li><a href="#">Available</a>
+                                                <li><a href="#">College Student</a>
                                                 </li>
-                                                <li><a href="#">Deployed</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="calendar.php">Calendar</a></li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Reports <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Static Table</a>
-                                                </li>
-                                                <li><a href="data-table.html">Data Table</a>
+                                                <li><a href="#">SHS Student</a>
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li><a data-toggle="collapse" data-target="#demodepart" href="#">Manage Signatory <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <ul id="demodepart" class="collapse dropdown-header-top">
+                                                <li><a href="#">College Student</a>
+                                                </li>
+                                                <li><a href="#">SHS Student</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        
                                         <li>
-                                            <a data-toggle="collapse" data-target="#Pagemob" href="#">Settings <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <a data-toggle="collapse" data-target="#Pagemob" href="login.php">Log out<span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                         </li>
                                     </ul>
                                 </nav>
